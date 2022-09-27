@@ -1,9 +1,9 @@
 # Building an executable
 
-## Windows
-We use jpackage to build an installer for this project
+# Windows
+We use jpackage to build an MSI installer for this project
 
-# Prerequisites 
+## Prerequisites 
 You will need Wix 3.0 or later installed on your machine, you can download it from here https://wixtoolset.org/
 
 First run 
