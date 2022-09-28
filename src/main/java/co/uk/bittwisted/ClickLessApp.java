@@ -205,20 +205,20 @@ public class ClickLessApp extends JFrame {
 
     public void minimizeApplication() {
         if(SystemTray.isSupported()) {
-            setVisible(false);
             setExtendedState(ICONIFIED);
         }
+        setVisible(false);
     }
 
     public void maximizeApplication() {
-        if(SystemTray.isSupported()) {
-            EventQueue.invokeLater(() -> {
-                setVisible(true);
+        EventQueue.invokeLater(() -> {
+            if(SystemTray.isSupported()) {
                 setExtendedState(JFrame.NORMAL);
-                toFront();
-                repaint();
-            });
-        }
+            }
+            setVisible(true);
+            toFront();
+            repaint();
+        });
     }
 
     public void startJob(WatchJob watchJob, String watchFolderPath, String exeToRunPath, List<String> fileTypes)
